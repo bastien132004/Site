@@ -1,61 +1,430 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pêche Comparatif - Le guide du matériel de pêche</title>
-    <meta name="description" content="Comparatifs et avis sur le meilleur matériel de pêche : cannes, moulinets et échosondeurs.">
-    <!-- Lien vers le CSS dans le dossier assets -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PecheComparatif.fr — Comparez. Choisissez. Pêchez Mieux.</title>
+  <meta name="description" content="Le meilleur comparateur de matériel de pêche : moulinets, cannes, leurres. Comparez les prix Amazon, Decathlon, Shimano, Daiwa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Pêche<span>Comparatif</span></div>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Moulinets</a></li>
-                <li><a href="#">Cannes</a></li>
-                <li><a href="#">Échosondeurs</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ═══════════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/logo/logo.png" alt="PecheComparatif.fr" class="logo" />
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="#categories">Catégories</a>
+        <a href="#comparateur">Comparateur</a>
+        <a href="articles/meilleur-mouli.html">Articles</a>
+        <a href="#apropos">À propos</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-    <main>
-        <section class="hero">
-            <h1>Trouvez le meilleur matériel pour votre prochaine session</h1>
-            <p>Tests indépendants et comparatifs détaillés pour tous les pêcheurs.</p>
-        </section>
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">🎣 Comparateur N°1 en France</div>
+      <h1 class="hero-title">
+        Comparez.<br />
+        <span class="accent">Choisissez.</span><br />
+        Pêchez Mieux.
+      </h1>
+      <p class="hero-sub">
+        Moulinets, cannes, leurres, hameçons — on compare pour vous les meilleurs prix
+        chez Amazon, Decathlon, Shimano &amp; Daiwa.
+      </p>
+      <div class="hero-search">
+        <input type="text" id="search-input" placeholder="Rechercher un produit, une marque…" autocomplete="off" />
+        <button class="btn-primary" id="search-btn">Comparer</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>+2 400</strong><span>Produits comparés</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><strong>4 partenaires</strong><span>Amazon · Decathlon · Shimano · Daiwa</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><strong>MAJ quotidienne</strong><span>Prix en temps réel</span></div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--bg)"/></svg>
+    </div>
+  </section>
 
-        <section class="articles-grid">
-            <!-- Article 1 -->
-            <article class="card">
-                <div class="card-img" style="background-color: #ddd;">
-                    <!-- <img src="assets/img/produits/moulinet.jpg" alt="Moulinet"> -->
-                </div>
-                <div class="card-content">
-                    <h3>Top 5 des moulinets Carnassier 2026</h3>
-                    <p>Découvrez notre sélection pour ne plus rater vos combats avec les gros brochets.</p>
-                    <a href="articles/meilleur-moulinet-brochet.html" class="btn">Lire le guide</a>
-                </div>
-            </article>
+  <!-- ═══════════════════════════════════════════
+       CATÉGORIES
+  ═══════════════════════════════════════════ -->
+  <section class="section categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explorez par catégorie</h2>
+        <p>Trouvez le bon matériel selon votre technique de pêche</p>
+      </div>
+      <div class="categories-grid">
+        <a href="#" class="cat-card" data-cat="moulinets">
+          <div class="cat-icon">🎡</div>
+          <h3>Moulinets</h3>
+          <span class="cat-count">340 produits</span>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="#" class="cat-card" data-cat="cannes">
+          <div class="cat-icon">🎣</div>
+          <h3>Cannes</h3>
+          <span class="cat-count">580 produits</span>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="#" class="cat-card featured" data-cat="leurres">
+          <div class="cat-badge">Populaire</div>
+          <div class="cat-icon">🐟</div>
+          <h3>Leurres</h3>
+          <span class="cat-count">920 produits</span>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="#" class="cat-card" data-cat="hamecons">
+          <div class="cat-icon">🪝</div>
+          <h3>Hameçons</h3>
+          <span class="cat-count">210 produits</span>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="#" class="cat-card" data-cat="fils">
+          <div class="cat-icon">🧵</div>
+          <h3>Fils &amp; Tresses</h3>
+          <span class="cat-count">180 produits</span>
+          <div class="cat-arrow">→</div>
+        </a>
+        <a href="#" class="cat-card" data-cat="accessoires">
+          <div class="cat-icon">🎒</div>
+          <h3>Accessoires</h3>
+          <span class="cat-count">170 produits</span>
+          <div class="cat-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <!-- Article 2 -->
-            <article class="card">
-                <div class="card-img" style="background-color: #ccc;"></div>
-                <div class="card-content">
-                    <h3>Comparatif Échosondeurs</h3>
-                    <p>Quel sondeur choisir pour la pêche en kayak ou en bateau ?</p>
-                    <a href="#" class="btn">Voir le comparatif</a>
-                </div>
-            </article>
-        </section>
-    </main>
+  <!-- ═══════════════════════════════════════════
+       COMPARATEUR PRODUITS (section dynamique)
+  ═══════════════════════════════════════════ -->
+  <section class="section comparateur-section" id="comparateur">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meilleures offres du moment</h2>
+        <p>Sélection mise à jour quotidiennement</p>
+      </div>
 
-    <footer>
-        <p>&copy; 2026 PêcheComparatif.fr - Passion et Expertise</p>
-    </footer>
+      <!-- Filtres -->
+      <div class="filters-bar">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="shimano">Shimano</button>
+        <button class="filter-btn" data-filter="daiwa">Daiwa</button>
+        <button class="filter-btn" data-filter="amazon">Amazon</button>
+        <button class="filter-btn" data-filter="decathlon">Decathlon</button>
+      </div>
 
+      <!-- Grille produits -->
+      <div class="products-grid" id="products-grid">
+
+        <!-- Carte produit 1 -->
+        <article class="product-card" data-brand="shimano">
+          <div class="product-badge best">Meilleur rapport</div>
+          <div class="product-img-wrap">
+            <img src="assets/img/produits/placeholder.jpg" alt="Shimano Stradic" class="product-img" onerror="this.style.display='none'" />
+            <div class="product-img-placeholder">🎡</div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand shimano">Shimano</div>
+            <h3 class="product-name">Stradic FM 2500 HG</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(487 avis)</span>
+            </div>
+            <div class="product-prices">
+              <div class="price-best">
+                <span class="price-amount">89,99 €</span>
+                <span class="price-retailer">Amazon</span>
+              </div>
+              <div class="price-compare">
+                <span>Decathlon : <s>109,99 €</s></span>
+              </div>
+            </div>
+            <div class="product-saving">Économisez 20,00 €</div>
+          </div>
+          <div class="product-footer">
+            <a href="#" class="btn-product" rel="nofollow sponsored">Voir l'offre →</a>
+            <button class="btn-compare-add" title="Ajouter à la comparaison">+ Comparer</button>
+          </div>
+        </article>
+
+        <!-- Carte produit 2 -->
+        <article class="product-card" data-brand="daiwa">
+          <div class="product-img-wrap">
+            <div class="product-img-placeholder">🎡</div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand daiwa">Daiwa</div>
+            <h3 class="product-name">Fuego LT 3000-CXH</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-count">(312 avis)</span>
+            </div>
+            <div class="product-prices">
+              <div class="price-best">
+                <span class="price-amount">74,90 €</span>
+                <span class="price-retailer">Decathlon</span>
+              </div>
+              <div class="price-compare">
+                <span>Amazon : <s>82,00 €</s></span>
+              </div>
+            </div>
+            <div class="product-saving">Économisez 7,10 €</div>
+          </div>
+          <div class="product-footer">
+            <a href="#" class="btn-product" rel="nofollow sponsored">Voir l'offre →</a>
+            <button class="btn-compare-add" title="Ajouter à la comparaison">+ Comparer</button>
+          </div>
+        </article>
+
+        <!-- Carte produit 3 -->
+        <article class="product-card" data-brand="shimano">
+          <div class="product-badge new">Nouveau</div>
+          <div class="product-img-wrap">
+            <div class="product-img-placeholder">🎣</div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand shimano">Shimano</div>
+            <h3 class="product-name">Canne Catana EX 270 M</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(203 avis)</span>
+            </div>
+            <div class="product-prices">
+              <div class="price-best">
+                <span class="price-amount">49,90 €</span>
+                <span class="price-retailer">Amazon</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-footer">
+            <a href="#" class="btn-product" rel="nofollow sponsored">Voir l'offre →</a>
+            <button class="btn-compare-add" title="Ajouter à la comparaison">+ Comparer</button>
+          </div>
+        </article>
+
+        <!-- Carte produit 4 -->
+        <article class="product-card" data-brand="decathlon">
+          <div class="product-img-wrap">
+            <div class="product-img-placeholder">🐟</div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand decathlon">Decathlon</div>
+            <h3 class="product-name">Leurre Souple WXM TVB 120 S</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-count">(89 avis)</span>
+            </div>
+            <div class="product-prices">
+              <div class="price-best">
+                <span class="price-amount">12,99 €</span>
+                <span class="price-retailer">Decathlon</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-footer">
+            <a href="#" class="btn-product" rel="nofollow sponsored">Voir l'offre →</a>
+            <button class="btn-compare-add" title="Ajouter à la comparaison">+ Comparer</button>
+          </div>
+        </article>
+
+        <!-- Carte produit 5 -->
+        <article class="product-card" data-brand="daiwa">
+          <div class="product-img-wrap">
+            <div class="product-img-placeholder">🎣</div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand daiwa">Daiwa</div>
+            <h3 class="product-name">Canne Ninja X Spin 210 MH</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-count">(156 avis)</span>
+            </div>
+            <div class="product-prices">
+              <div class="price-best">
+                <span class="price-amount">39,99 €</span>
+                <span class="price-retailer">Amazon</span>
+              </div>
+              <div class="price-compare">
+                <span>Decathlon : <s>44,99 €</s></span>
+              </div>
+            </div>
+            <div class="product-saving">Économisez 5,00 €</div>
+          </div>
+          <div class="product-footer">
+            <a href="#" class="btn-product" rel="nofollow sponsored">Voir l'offre →</a>
+            <button class="btn-compare-add" title="Ajouter à la comparaison">+ Comparer</button>
+          </div>
+        </article>
+
+        <!-- Carte produit 6 -->
+        <article class="product-card" data-brand="amazon">
+          <div class="product-badge deal">Promo</div>
+          <div class="product-img-wrap">
+            <div class="product-img-placeholder">🪝</div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand amazon">Amazon</div>
+            <h3 class="product-name">Kit Hameçons Mustad Ultrapoint x100</h3>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-count">(721 avis)</span>
+            </div>
+            <div class="product-prices">
+              <div class="price-best">
+                <span class="price-amount">8,49 €</span>
+                <span class="price-retailer">Amazon</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-footer">
+            <a href="#" class="btn-product" rel="nofollow sponsored">Voir l'offre →</a>
+            <button class="btn-compare-add" title="Ajouter à la comparaison">+ Comparer</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Barre de comparaison flottante -->
+      <div class="compare-bar" id="compare-bar">
+        <div class="compare-bar-inner">
+          <span class="compare-count" id="compare-count">0 produit sélectionné</span>
+          <button class="btn-primary" id="compare-launch" disabled>Lancer la comparaison</button>
+          <button class="compare-clear" id="compare-clear">✕ Vider</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ARTICLE MIS EN AVANT
+  ═══════════════════════════════════════════ -->
+  <section class="section article-highlight">
+    <div class="container">
+      <div class="article-highlight-inner">
+        <div class="article-highlight-text">
+          <div class="label-tag">Guide d'achat</div>
+          <h2>Quel est le meilleur moulinet de pêche en 2025 ?</h2>
+          <p>Shimano Stradic, Daiwa Fuego, Penn Battle… On a testé et comparé les 10 moulinets les plus populaires pour vous aider à faire le bon choix selon votre budget et votre technique.</p>
+          <a href="articles/meilleur-mouli.html" class="btn-outline">Lire l'article complet →</a>
+        </div>
+        <div class="article-highlight-visual">
+          <div class="article-highlight-card">
+            <div class="ahc-emoji">🏆</div>
+            <div class="ahc-text">
+              <strong>Notre verdict</strong>
+              <span>Shimano Stradic FM</span>
+              <small>Meilleur global 2025</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PARTENAIRES / CONFIANCE
+  ═══════════════════════════════════════════ -->
+  <section class="section partners-section">
+    <div class="container">
+      <p class="partners-label">Nous comparons les prix chez</p>
+      <div class="partners-logos">
+        <div class="partner-logo amazon-logo">amazon</div>
+        <div class="partner-logo decathlon-logo">decathlon</div>
+        <div class="partner-logo shimano-logo">SHIMANO</div>
+        <div class="partner-logo daiwa-logo">DAIWA</div>
+      </div>
+      <p class="affiliate-notice">
+        ℹ️ Ce site contient des liens affiliés. En achetant via nos liens, vous nous aidez à maintenir le comparateur gratuit, sans frais supplémentaires pour vous.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       POURQUOI NOUS
+  ═══════════════════════════════════════════ -->
+  <section class="section why-section" id="apropos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pourquoi PecheComparatif.fr ?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Prix en temps réel</h3>
+          <p>Notre comparateur est mis à jour quotidiennement pour vous garantir les meilleurs prix du marché.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Sélection experte</h3>
+          <p>Chaque produit est sélectionné et évalué par des pêcheurs passionnés, pas des algorithmes.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>100% gratuit</h3>
+          <p>L'accès au comparateur est totalement gratuit. On se rémunère uniquement via l'affiliation.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📊</div>
+          <h3>Comparaison claire</h3>
+          <p>Tableau comparatif, avis, notes, prix — tout ce qu'il faut pour décider en un coup d'œil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo/logo.png" alt="PecheComparatif.fr" class="footer-logo" onerror="this.style.display='none'" />
+        <p>Comparez. Choisissez. Pêchez Mieux.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="#categories">Catégories</a>
+        <a href="articles/meilleur-mouli.html">Articles</a>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Gestion des cookies</a>
+        <a href="#">Affiliation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 PecheComparatif.fr — Tous droits réservés. Site participant au programme d'affiliation Amazon EU.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
