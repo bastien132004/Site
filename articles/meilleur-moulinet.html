@@ -8,27 +8,135 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
-  <!-- CSS : remonte d'un niveau car on est dans /articles/ -->
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/article.css" />
 </head>
 <body>
 
-  <!-- HEADER (identique) -->
+  <!-- ═══════════════════════════════════════════
+       OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ═══════════════════════════════════════════
+       SIDEBAR NAV VERTICALE (gauche)
+  ═══════════════════════════════════════════ -->
+  <aside class="site-sidebar" id="site-sidebar" role="navigation" aria-label="Menu principal">
+
+    <div class="sidebar-logo-zone">
+      <a href="../index.html">
+        <img
+          src="../assets/img/logo/logo.png"
+          alt="PecheComparatif.fr"
+          class="sidebar-logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div class="sidebar-logo-text" style="display:none;">
+          Peche<span>Comparatif</span>.fr
+        </div>
+      </a>
+      <div class="sidebar-logo-tagline">Comparez · Choisissez · Pêchez mieux</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+
+      <a href="../index.html">
+        <span class="nav-icon">🏠</span>
+        Accueil
+      </a>
+      <a href="../index.html#categories">
+        <span class="nav-icon">📂</span>
+        Catégories
+      </a>
+      <a href="../index.html#comparateur">
+        <span class="nav-icon">⚖️</span>
+        Comparateur
+      </a>
+      <a href="meilleur-moulinet.html" class="active">
+        <span class="nav-icon">📰</span>
+        Articles
+      </a>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-nav-label">Articles récents</div>
+
+      <a href="meilleur-moulinet.html" class="active">
+        <span class="nav-icon">🎡</span>
+        Meilleur moulinet 2025
+      </a>
+      <a href="#">
+        <span class="nav-icon">🎣</span>
+        Meilleure canne spinning
+      </a>
+      <a href="#">
+        <span class="nav-icon">🐟</span>
+        Top 5 leurres carnassier
+      </a>
+      <a href="#">
+        <span class="nav-icon">🧵</span>
+        Guide des fils de pêche
+      </a>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-nav-label">Infos</div>
+
+      <a href="../index.html#apropos">
+        <span class="nav-icon">ℹ️</span>
+        À propos
+      </a>
+      <a href="#">
+        <span class="nav-icon">📜</span>
+        Mentions légales
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <strong>Affiliation</strong>
+      Ce site contient des liens affiliés Amazon. En achetant via nos liens, vous nous aidez à maintenir le comparateur gratuit.
+    </div>
+
+  </aside>
+
+  <!-- ═══════════════════════════════════════════
+       TOPBAR
+  ═══════════════════════════════════════════ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo-link">
-        <img src="../assets/img/logo/logo.png" alt="PecheComparatif.fr" class="logo" />
-      </a>
-      <nav class="main-nav" id="main-nav">
-        <a href="../index.html#categories">Catégories</a>
-        <a href="../index.html#comparateur">Comparateur</a>
-        <a href="meilleur-mouli.html" class="active">Articles</a>
-        <a href="../index.html#apropos">À propos</a>
-      </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-controls="site-sidebar">
         <span></span><span></span><span></span>
       </button>
+
+      <a href="../index.html" class="header-logo-link">
+        <img
+          src="../assets/img/logo/logo.png"
+          alt="PecheComparatif.fr"
+          class="header-logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span class="header-logo-text" style="display:none;">Peche<span>Comparatif</span>.fr</span>
+      </a>
+
+      <!-- Breadcrumb dans la topbar -->
+      <div class="header-page-info">
+        <span class="header-page-sep">›</span>
+        <span class="header-page-title">Meilleur moulinet 2025</span>
+      </div>
+
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="header-search-icon">🔍</span>
+          <input
+            type="text"
+            id="header-search-input"
+            placeholder="Rechercher un produit…"
+            autocomplete="off"
+            aria-label="Rechercher"
+          />
+        </div>
+      </div>
+
     </div>
   </header>
 
@@ -73,10 +181,8 @@
   <main class="article-body">
     <div class="container article-layout">
 
-      <!-- CONTENU PRINCIPAL -->
       <article class="article-content">
 
-        <!-- Verdict rapide -->
         <section id="verdict" class="content-section">
           <h2>🏆 Notre verdict rapide</h2>
           <div class="verdict-cards">
@@ -101,7 +207,6 @@
           </div>
         </section>
 
-        <!-- Top 3 -->
         <section id="top3" class="content-section">
           <h2>Top 3 des moulinets en 2025</h2>
 
@@ -152,7 +257,7 @@
               </div>
             </div>
             <div class="pr-body">
-              <p>Le Daiwa Fuego LT est le meilleur rapport qualité/prix du marché. La technologie LT (Light & Tough) lui permet d'être à la fois léger et robuste. Avec 6 roulements à billes, il rivalise avec des modèles nettement plus chers.</p>
+              <p>Le Daiwa Fuego LT est le meilleur rapport qualité/prix du marché. La technologie LT (Light &amp; Tough) lui permet d'être à la fois léger et robuste. Avec 6 roulements à billes, il rivalise avec des modèles nettement plus chers.</p>
               <div class="pr-pros-cons">
                 <div class="pros">
                   <strong>✅ Points forts</strong>
@@ -175,7 +280,6 @@
 
         </section>
 
-        <!-- Guide d'achat -->
         <section id="guide" class="content-section">
           <h2>Comment choisir son moulinet de pêche ?</h2>
           <p>Le choix d'un moulinet dépend de <strong>3 critères principaux</strong> :</p>
@@ -198,7 +302,6 @@
           </div>
         </section>
 
-        <!-- Tableau comparatif -->
         <section id="tableau" class="content-section">
           <h2>Tableau comparatif complet</h2>
           <div class="compare-table-wrap">
@@ -256,14 +359,13 @@
           </div>
         </section>
 
-        <!-- Mention affiliation -->
         <div class="affiliate-block">
           <p>ℹ️ <strong>Note de transparence :</strong> Certains liens de cet article sont des liens d'affiliation. Si vous achetez via nos liens, nous touchons une commission sans coût supplémentaire pour vous. Cela nous permet de maintenir le site gratuitement.</p>
         </div>
 
       </article>
 
-      <!-- SIDEBAR -->
+      <!-- SIDEBAR ARTICLE -->
       <aside class="article-sidebar">
         <div class="sidebar-widget">
           <h4>🏆 Notre N°1</h4>
@@ -287,7 +389,7 @@
     </div>
   </main>
 
-  <!-- FOOTER identique -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">

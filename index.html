@@ -13,22 +13,137 @@
 <body>
 
   <!-- ═══════════════════════════════════════════
-       HEADER / NAV
+       OVERLAY (ferme la sidebar)
+  ═══════════════════════════════════════════ -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ═══════════════════════════════════════════
+       SIDEBAR NAV VERTICALE (gauche)
+  ═══════════════════════════════════════════ -->
+  <aside class="site-sidebar" id="site-sidebar" role="navigation" aria-label="Menu principal">
+
+    <!-- Logo grand dans la sidebar -->
+    <div class="sidebar-logo-zone">
+      <a href="index.html">
+        <img
+          src="assets/img/logo/logo.png"
+          alt="PecheComparatif.fr"
+          class="sidebar-logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div class="sidebar-logo-text" style="display:none;">
+          Peche<span>Comparatif</span>.fr
+        </div>
+      </a>
+      <div class="sidebar-logo-tagline">Comparez · Choisissez · Pêchez mieux</div>
+    </div>
+
+    <!-- Navigation verticale -->
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Navigation</div>
+
+      <a href="index.html" class="active">
+        <span class="nav-icon">🏠</span>
+        Accueil
+      </a>
+      <a href="#categories">
+        <span class="nav-icon">📂</span>
+        Catégories
+      </a>
+      <a href="#comparateur">
+        <span class="nav-icon">⚖️</span>
+        Comparateur
+      </a>
+      <a href="articles/meilleur-moulinet.html">
+        <span class="nav-icon">📰</span>
+        Articles
+      </a>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-nav-label">Catégories</div>
+
+      <a href="#">
+        <span class="nav-icon">🎡</span>
+        Moulinets
+      </a>
+      <a href="#">
+        <span class="nav-icon">🎣</span>
+        Cannes
+      </a>
+      <a href="#">
+        <span class="nav-icon">🐟</span>
+        Leurres
+      </a>
+      <a href="#">
+        <span class="nav-icon">🪝</span>
+        Hameçons
+      </a>
+      <a href="#">
+        <span class="nav-icon">🧵</span>
+        Fils &amp; Tresses
+      </a>
+      <a href="#">
+        <span class="nav-icon">🎒</span>
+        Accessoires
+      </a>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-nav-label">Infos</div>
+
+      <a href="#apropos">
+        <span class="nav-icon">ℹ️</span>
+        À propos
+      </a>
+      <a href="#">
+        <span class="nav-icon">📜</span>
+        Mentions légales
+      </a>
+    </nav>
+
+    <!-- Pied de sidebar -->
+    <div class="sidebar-footer">
+      <strong>Affiliation</strong>
+      Ce site contient des liens affiliés Amazon. En achetant via nos liens, vous nous aidez à maintenir le comparateur gratuit.
+    </div>
+
+  </aside>
+
+  <!-- ═══════════════════════════════════════════
+       TOPBAR (fixe en haut)
   ═══════════════════════════════════════════ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo-link">
-        <img src="assets/img/logo/logo.png" alt="PecheComparatif.fr" class="logo" />
-      </a>
-      <nav class="main-nav" id="main-nav">
-        <a href="#categories">Catégories</a>
-        <a href="#comparateur">Comparateur</a>
-        <a href="articles/meilleur-mouli.html">Articles</a>
-        <a href="#apropos">À propos</a>
-      </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+
+      <!-- Bouton hamburger -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-controls="site-sidebar">
         <span></span><span></span><span></span>
       </button>
+
+      <!-- Logo dans la topbar -->
+      <a href="index.html" class="header-logo-link">
+        <img
+          src="assets/img/logo/logo.png"
+          alt="PecheComparatif.fr"
+          class="header-logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        />
+        <span class="header-logo-text" style="display:none;">Peche<span>Comparatif</span>.fr</span>
+      </a>
+
+      <!-- Actions à droite -->
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <span class="header-search-icon">🔍</span>
+          <input
+            type="text"
+            id="header-search-input"
+            placeholder="Rechercher un produit…"
+            autocomplete="off"
+            aria-label="Rechercher"
+          />
+        </div>
+      </div>
+
     </div>
   </header>
 
@@ -117,7 +232,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       COMPARATEUR PRODUITS (section dynamique)
+       COMPARATEUR PRODUITS
   ═══════════════════════════════════════════ -->
   <section class="section comparateur-section" id="comparateur">
     <div class="container">
@@ -126,7 +241,6 @@
         <p>Sélection mise à jour quotidiennement</p>
       </div>
 
-      <!-- Filtres -->
       <div class="filters-bar">
         <button class="filter-btn active" data-filter="all">Tous</button>
         <button class="filter-btn" data-filter="shimano">Shimano</button>
@@ -135,10 +249,8 @@
         <button class="filter-btn" data-filter="decathlon">Decathlon</button>
       </div>
 
-      <!-- Grille produits -->
       <div class="products-grid" id="products-grid">
 
-        <!-- Carte produit 1 -->
         <article class="product-card" data-brand="shimano">
           <div class="product-badge best">Meilleur rapport</div>
           <div class="product-img-wrap">
@@ -157,9 +269,7 @@
                 <span class="price-amount">89,99 €</span>
                 <span class="price-retailer">Amazon</span>
               </div>
-              <div class="price-compare">
-                <span>Decathlon : <s>109,99 €</s></span>
-              </div>
+              <div class="price-compare"><span>Decathlon : <s>109,99 €</s></span></div>
             </div>
             <div class="product-saving">Économisez 20,00 €</div>
           </div>
@@ -169,7 +279,6 @@
           </div>
         </article>
 
-        <!-- Carte produit 2 -->
         <article class="product-card" data-brand="daiwa">
           <div class="product-img-wrap">
             <div class="product-img-placeholder">🎡</div>
@@ -186,9 +295,7 @@
                 <span class="price-amount">74,90 €</span>
                 <span class="price-retailer">Decathlon</span>
               </div>
-              <div class="price-compare">
-                <span>Amazon : <s>82,00 €</s></span>
-              </div>
+              <div class="price-compare"><span>Amazon : <s>82,00 €</s></span></div>
             </div>
             <div class="product-saving">Économisez 7,10 €</div>
           </div>
@@ -198,7 +305,6 @@
           </div>
         </article>
 
-        <!-- Carte produit 3 -->
         <article class="product-card" data-brand="shimano">
           <div class="product-badge new">Nouveau</div>
           <div class="product-img-wrap">
@@ -224,7 +330,6 @@
           </div>
         </article>
 
-        <!-- Carte produit 4 -->
         <article class="product-card" data-brand="decathlon">
           <div class="product-img-wrap">
             <div class="product-img-placeholder">🐟</div>
@@ -249,7 +354,6 @@
           </div>
         </article>
 
-        <!-- Carte produit 5 -->
         <article class="product-card" data-brand="daiwa">
           <div class="product-img-wrap">
             <div class="product-img-placeholder">🎣</div>
@@ -266,9 +370,7 @@
                 <span class="price-amount">39,99 €</span>
                 <span class="price-retailer">Amazon</span>
               </div>
-              <div class="price-compare">
-                <span>Decathlon : <s>44,99 €</s></span>
-              </div>
+              <div class="price-compare"><span>Decathlon : <s>44,99 €</s></span></div>
             </div>
             <div class="product-saving">Économisez 5,00 €</div>
           </div>
@@ -278,7 +380,6 @@
           </div>
         </article>
 
-        <!-- Carte produit 6 -->
         <article class="product-card" data-brand="amazon">
           <div class="product-badge deal">Promo</div>
           <div class="product-img-wrap">
@@ -328,7 +429,7 @@
           <div class="label-tag">Guide d'achat</div>
           <h2>Quel est le meilleur moulinet de pêche en 2025 ?</h2>
           <p>Shimano Stradic, Daiwa Fuego, Penn Battle… On a testé et comparé les 10 moulinets les plus populaires pour vous aider à faire le bon choix selon votre budget et votre technique.</p>
-          <a href="articles/meilleur-mouli.html" class="btn-outline">Lire l'article complet →</a>
+          <a href="articles/meilleur-moulinet.html" class="btn-outline">Lire l'article complet →</a>
         </div>
         <div class="article-highlight-visual">
           <div class="article-highlight-card">
@@ -345,7 +446,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       PARTENAIRES / CONFIANCE
+       PARTENAIRES
   ═══════════════════════════════════════════ -->
   <section class="section partners-section">
     <div class="container">
@@ -408,7 +509,7 @@
         <h4>Navigation</h4>
         <a href="index.html">Accueil</a>
         <a href="#categories">Catégories</a>
-        <a href="articles/meilleur-mouli.html">Articles</a>
+        <a href="articles/meilleur-moulinet.html">Articles</a>
       </div>
       <div class="footer-links">
         <h4>Légal</h4>
